@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">login-hkAndroid</string>
+    <string name="welcome_to_my_first_app">Welcome to My First App</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="submit">Submit</string>
+    <string name="todo">TODO</string>
+    <string name="app_connect">App Connect</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="email_or_username">email or username</string>
+    <string name="password">password</string>
+    <string name="log_in">Log In</string>
+    <string name="forgot_password">Forgot password?</string>
+</resources>
