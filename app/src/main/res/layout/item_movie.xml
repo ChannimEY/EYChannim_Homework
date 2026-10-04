@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="175dp"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="#1F222A">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+
+        <!-- Movie Poster CardView for rounded corners -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPoster"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivPoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/movie_1"
+                android:contentDescription="@string/movie_poster" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Rating Badge on top of poster -->
+        <LinearLayout
+            android:id="@+id/layoutRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_badge_solid"
+            android:backgroundTint="#FF9800"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="3dp"
+            app:layout_constraintStart_toStartOf="@id/cardPoster"
+            app:layout_constraintTop_toTopOf="@id/cardPoster">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="3dp"
+                android:src="@drawable/ic_star"
+                app:tint="@android:color/white"
+                android:contentDescription="@string/star" />
+
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                tools:text="4.8" />
+        </LinearLayout>
+
+        <!-- Premium / Free Badge -->
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:background="@drawable/bg_badge_solid"
+            android:backgroundTint="#FF9800"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/cardPoster"
+            app:layout_constraintTop_toTopOf="@id/cardPoster"
+            tools:text="Premium" />
+
+        <!-- Movie Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardPoster"
+            app:layout_constraintTop_toBottomOf="@id/tvType"
+            tools:text="Spider-Man No Way..." />
+
+        <!-- Year -->
+        <TextView
+            android:id="@+id/tvYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="4dp"
+            app:drawableStartCompat="@drawable/ic_calendar"
+            android:drawablePadding="6dp"
+            android:gravity="center_vertical"
+            android:textColor="#AAAAAA"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@id/cardPoster"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            tools:text="2021" />
+
+        <!-- Duration & Certificate Row -->
+        <LinearLayout
+            android:id="@+id/layoutDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardPoster"
+            app:layout_constraintTop_toBottomOf="@id/tvYear">
+
+            <TextView
+                android:id="@+id/tvDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/ic_clock"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                android:textColor="#AAAAAA"
+                android:textSize="12sp"
+                tools:text="148 Minutes" />
+
+            <TextView
+                android:id="@+id/tvCertificate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_badge_outlined"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="2dp"
+                android:textColor="#00BCD4"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                tools:text="PG-13" />
+        </LinearLayout>
+
+        <!-- Genre & Movie Row -->
+        <LinearLayout
+            android:id="@+id/layoutGenreMovie"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardPoster"
+            app:layout_constraintTop_toBottomOf="@id/layoutDetails">
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_movie"
+                app:tint="#AAAAAA"
+                android:contentDescription="@string/movie_icon" />
+
+            <TextView
+                android:id="@+id/tvGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#AAAAAA"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Action" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:text="|"
+                android:textColor="#AAAAAA"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Movie" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

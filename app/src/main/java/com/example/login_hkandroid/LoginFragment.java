@@ -65,12 +65,13 @@ public class LoginFragment extends Fragment {
 
         binding.btnSubmit.setOnClickListener(v -> {
             hideKeyboard();
-            var message = "Username: " + binding.etUsername.getText().toString();
-            message += "\nPassword: " + binding.etPwd.getText().toString();
+            var message = "Login successful for " + binding.etUsername.getText().toString();
 
-            Snackbar.make(binding.getRoot(), message, Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(binding.getRoot(), message, Snackbar.LENGTH_SHORT)
                     .setAction("OK", dialog -> {})
                     .show();
+
+            navController.navigate(R.id.action_loginFragment_to_movieListFragment);
         });
 
         addTextInputListener();

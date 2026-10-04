@@ -19,4 +19,7 @@
     <string name="github_login">GitHub Login</string>
     <string name="google_login">Google Login</string>
     <string name="facebook_login">Facebook Login</string>
+    <string name="movie_icon">Movie Icon</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="star">Star</string>
 </resources>
